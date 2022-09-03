@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Hasher</title>
+</head>
+<style>
+    table {
+        border: 3px outset;
+        border-radius: 10px;
+        border-spacing: 10px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+    #mod{
+        display: block;
+        margin:0 auto;
+    }
+</style>
+
+<body>
+    <h2 style="text-align:center"> Login Employee </h2>
+    <form method="POST">
+        {% csrf_token %}
+        <table style="width:50%" align="center">
+            <tr>
+                <td>Email</td>
+                <td><input type="email" placeholder="Enter Employee Email" name="email" </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" placeholder="Enter Employee Password" name="password" </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><button class="btn btn-success">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+    <div id="mod">
+        <p style="text-align:center">Encryptedpassword: {{encryptedpassword}}</p>
+        <p style="text-align:center">Checkpassword: {{checkpassword}}</p>
+
+    </div>
+</body>
+
+</script>
+</html>
